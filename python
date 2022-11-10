@@ -1,0 +1,838 @@
+i=0
+listeb=[]
+reg = []
+u=1
+x=1
+b=0
+print('Atenção---Só será possivel realizar 5 cadastro')
+
+while i!= 5:
+	print('\nMENU DE CADASTRO : ')
+	print('1 - CADASTRO : ')
+	print('2 - LER: ')
+	print('3 - DELETAR :')
+	print('4- ATUALIZAR : ')
+	print('5 - SAIR: ')
+	
+	l= int (input ('Digite sua opção :'))
+	
+	if l== 1:
+		b=int(input('Quantidades de pessoas a serem cadastradas(Maximo: 5): '))
+		reg.append(b)
+		cal = sum(reg)
+		if cal <= 5 :
+		    if b <= 5 :
+			    for a in range(b):
+			   	    print('\nCadastro N° %d'%x)
+			   	    nome = (input ('Nome: '))
+			   	    num= (input ('Numero :'))
+			   	    cpf= (input ('Cpf :'))
+			   	    endereco= (input ( 'Endereço : '))
+			   	    email= (input('E-mail : '))
+			   	    emailnv= (input('Confirma Email : '))
+			   	
+			   	    if emailnv != email :
+			   		    print('E-mail incorreto.')
+			   		    print('Ao errar de novo,voltará ao sistema de menu')
+			   		    emailnv = (input('Rescreva o E-mail : '))
+			   		    if emailnv == email :
+			   			    print('E-mail correto')
+			   			    senha= (input ('Defina uma senha :'))
+			   			    csenha= (input ('Confirma senha : '))
+			   			    if csenha != senha:
+			   				    print('Senha incorreta : ')
+			   				    csenha= (input ('Rescreva a senha :'))
+			   			    else :
+			   				    print('Senha correta')
+			   		    else:
+			   			    print('E-mail incorreto')
+			   	    else :
+			   		    print('E-mail correto')
+			   		    senha= (input ('Defina uma senha :'))
+			   		    csenha= (input ('Confirma senha : '))
+			   		    if csenha != senha:
+			   		   	    print('Senha incorreta : ')
+			   		   	    csenha= (input ('Rescreva a senha :'))
+			   		    else :
+			   		        print('Senha correta')
+			   	
+			   	    listeb.append(nome)
+			   	    u=u+1
+			   	    listeb.append(num)
+			   	    u=u+1
+			   	    listeb.append(cpf)
+			   	    u=u+1
+			   	    listeb.append(endereco)
+			   	    u=u+1
+			   	    listeb.append(emailnv)
+			   	    u=u+1
+			   	    listeb.append(csenha)
+			   	    u=u+1
+			   	    x=x+1
+		    else :
+			    print('Número invalido')
+		else :
+		    print('Desculpe,O maximo de cadastro é 5')
+		    if (reg[0]+reg[1]) > 5 : 
+		        del reg[1]
+		        calr= 5 - (sum(reg))
+		        print('Você só tem mais %d possibilades de cadastro'%calr)
+		    elif (reg[0]+reg[1]) > 5 and (reg[0]) == 5 :
+		        print('Já atingiu o máximo de cadastro')
+		    elif (reg[0]+reg[1]+reg[2]) > 5 and (reg[0]+reg[1]) == 5 :
+		        print('Já atingiu o máximo de cadastro')
+		    elif (reg[0]+reg[1]) < 5 and (reg[0]+reg[1]+reg[2]) > 5 :
+		        del reg[2]
+		        calr= 5 - (sum(reg))
+		        print('Você só tem mais %d possibilades de cadastro'%calr)
+		    elif (reg[0]+reg[1]+reg[2]+reg[3]) > 5 and (reg[0]+reg[1]+reg[2]) == 5 :
+		        print('Já atingiu o máximo de cadastro')
+		    elif (reg[0]+reg[1]+reg[2]) < 5 and (reg[0]+reg[1]+reg[2]+reg[3]) > 5 :
+		        del reg[3]
+		        oi=(sum(reg))
+		        if oi == 3 :
+		            print('Você só tem mais 2 possibilades de cadastro')
+		        if oi == 4 :
+		            print('Você só tem mais 1 possibilades de cadastro')
+		    elif (reg[0]+reg[1]+reg[2]+reg[3]) < 5 and (reg[0]+reg[1]+reg[2]+reg[3]+reg[4]) > 5:
+		        del reg[4]
+		        print('Você só tem mais 1 possibilades de cadastro')
+		    elif (reg[0]+reg[1]+reg[2]+reg[3]) > 5 and (reg[0]+reg[1]+reg[2]) == 5 :
+		        print('Já atingiu o máximo de cadastro')
+		    else :
+		        print('Já atingiu o máximo de cadastro')
+	
+	elif l==2 :
+	    cal = sum(reg)
+	    if cal > 0 and cal < 6 :
+	        print('Qual cadastro você que ver: ')
+	        print('1-Cadastro 1')
+	        print('2-Cadastro 2')
+	        print('3-Cadastro 3')
+	        print('4-Cadastro 4')
+	        print('5-Cadastro 5')
+	        print('6-Todos')
+	        print('7-Voltar')
+	        c = int(input('Digite sua opção: '))
+	        if c == 1:
+	            if b >= 1 and b < 6 :
+	                print('Cadastro 1')
+	                print('Nome: ',listeb[0])
+	                print('Numero: ',listeb[1])
+	                print('Cpf: ',listeb[2])
+	                print('Endereço: ',listeb[3])
+	                print('Email: ',listeb[4])
+	                print('Senha: ',listeb[5])
+	            else :
+	                print('Sem dados')
+	        elif c == 2:
+	    	    if b >= 2 and b < 6 :
+	    		    print('Cadastro 2')
+	    		    print('Nome: ',listeb[6])
+	    		    print('Numero',listeb[7])
+	    		    print('Cpf',listeb[8])
+	    		    print('Endereço',listeb[9])
+	    		    print('Email: ',listeb[10])
+	    		    print('Senha: ',listeb[11])
+	    	    else : 
+	    		    print('Sem dados')
+	        elif c == 3:
+	    	    if b >= 3 and b < 6 :
+	    		    print('Cadsatro 3')
+	    		    print('Nome: ',listeb[12])
+	    		    print('Numero: ',listeb[13])
+	    		    print('Cpf',listeb[14])
+	    		    print('Endereço',listeb[15])
+	    		    print('Email',listeb[16])
+	    		    print('Senha',listeb[17])
+	    	    else :
+	    		    print('Sem dados')
+	        elif c == 4:
+	    	    if b >= 4 and b < 6 :
+	    		    print('Cadastro 4')
+	    		    print('Nome: ',listeb[18])
+	    		    print('Numero: ',listeb[19])
+	    		    print('Cpf',listeb[20])
+	    		    print('Endereço',listeb[21])
+	    		    print('Email',listeb[22])
+	    		    print('Senha',listeb[23])
+	    	    else :
+	    		    print('Sem dados')
+	        elif c == 5:
+	    	    if b >= 5 and b < 6 :
+	    		    print('Cadastro 5')
+	    		    print('Nome: ',listeb[24])
+	    		    print('Numero: ',listeb[25])
+	    		    print('Cpf',listeb[26])
+	    		    print('Endereço',listeb[27])
+	    		    print('Email',listeb[28])
+	    		    print('Senha',listeb[29])
+	    	    else :
+	    		    print('Sem dados')
+	        elif c == 6 :
+	            if b == 1 :
+	                print('Cadastro 1')
+	                print('Nome: ',listeb[0])
+	                print('Numero: ',listeb[1])
+	                print('Cpf: ',listeb[2])
+	                print('Endereço: ',listeb[3])
+	                print('Email: ',listeb[4])
+	                print('Senha: ',listeb[5])
+	            elif b == 2 :
+	                print('Cadastro 1')
+	                print('Nome: ',listeb[0])
+	                print('Numero: ',listeb[1])
+	                print('Cpf: ',listeb[2])
+	                print('Endereço: ',listeb[3])
+	                print('Email: ',listeb[4])
+	                print('Senha: ',listeb[5])
+	                print('Cadastro 2')
+	                print('Nome: ',listeb[6])
+	                print('Numero',listeb[7])
+	                print('Cpf',listeb[8])
+	                print('Endereço',listeb[9])
+	                print('Email: ',listeb[10])
+	                print('Senha: ',listeb[11])
+	            elif b == 3 :
+	                print('Cadastro 1')
+	                print('Nome: ',listeb[0])
+	                print('Numero: ',listeb[1])
+	                print('Cpf: ',listeb[2])
+	                print('Endereço: ',listeb[3])
+	                print('Email: ',listeb[4])
+	                print('Senha: ',listeb[5])
+	                print('Cadastro 2')
+	                print('Nome: ',listeb[6])
+	                print('Numero',listeb[7])
+	                print('Cpf',listeb[8])
+	                print('Endereço',listeb[9])
+	                print('Email: ',listeb[10])
+	                print('Senha: ',listeb[11])
+	                print('Cadsatro 3')
+	                print('Nome: ',listeb[12])
+	                print('Numero: ',listeb[13])
+	                print('Cpf',listeb[14])
+	                print('Endereço',listeb[15])
+	                print('Email',listeb[16])
+	                print('Senha',listeb[17])
+	            elif b == 4 :
+	                print('Cadastro 1')
+	                print('Nome: ',listeb[0])
+	                print('Numero: ',listeb[1])
+	                print('Cpf: ',listeb[2])
+	                print('Endereço: ',listeb[3])
+	                print('Email: ',listeb[4])
+	                print('Senha: ',listeb[5])
+	                print('Cadastro 2')
+	                print('Nome: ',listeb[6])
+	                print('Numero',listeb[7])
+	                print('Cpf',listeb[8])
+	                print('Endereço',listeb[9])
+	                print('Email: ',listeb[10])
+	                print('Senha: ',listeb[11])
+	                print('Cadsatro 3')
+	                print('Nome: ',listeb[12])
+	                print('Numero: ',listeb[13])
+	                print('Cpf',listeb[14])
+	                print('Endereço',listeb[15])
+	                print('Email',listeb[16])
+	                print('Senha',listeb[17])
+	                print('Cadastro 4')
+	                print('Nome: ',listeb[18])
+	                print('Numero: ',listeb[19])
+	                print('Cpf',listeb[20])
+	                print('Endereço',listeb[21])
+	                print('Email',listeb[22])
+	                print('Senha',listeb[23])
+	            elif b == 5 :
+	                print('Cadastro 1')
+	                print('Nome: ',listeb[0])
+	                print('Numero: ',listeb[1])
+	                print('Cpf: ',listeb[2])
+	                print('Endereço: ',listeb[3])
+	                print('Email: ',listeb[4])
+	                print('Senha: ',listeb[5])
+	                print('Cadastro 2')
+	                print('Nome: ',listeb[6])
+	                print('Numero',listeb[7])
+	                print('Cpf',listeb[8])
+	                print('Endereço',listeb[9])
+	                print('Email: ',listeb[10])
+	                print('Senha: ',listeb[11])
+	                print('Cadsatro 3')
+	                print('Nome: ',listeb[12])
+	                print('Numero: ',listeb[13])
+	                print('Cpf',listeb[14])
+	                print('Endereço',listeb[15])
+	                print('Email',listeb[16])
+	                print('Senha',listeb[17])
+	                print('Cadastro 4')
+	                print('Nome: ',listeb[18])
+	                print('Numero: ',listeb[19])
+	                print('Cpf',listeb[20])
+	                print('Endereço',listeb[21])
+	                print('Email',listeb[22])
+	                print('Senha',listeb[23])
+	                print('Cadastro 5')
+	                print('Nome: ',listeb[24])
+	                print('Numero: ',listeb[25])
+	                print('Cpf',listeb[26])
+	                print('Endereço',listeb[27])
+	                print('Email',listeb[28])
+	                print('Senha',listeb[29])
+	            else:
+	                print('Sem dados completos')
+	        elif c == 7 :
+	            print(' ')
+	        else :
+	    	    print('Nome: Sem dados')
+	    	    print('Número: Sem dados ')
+	    	    print('Cpf: Sem dados ')
+	    	    print('Endereço: Sem dados')
+	    	    print('E-mail: Sem dados')
+	    	    print('Senha: Sem dados')
+	    
+	elif l == 3 :
+	    cal = sum(reg)
+	    if cal ==1 :
+	    		print('Nome: ',listeb[0])
+	    		print('Numero: ',listeb[1])
+	    		print('Cpf: ',listeb[2])
+	    		print('Endereço: ',listeb[3])
+	    		print('Email: ',listeb[4])
+	    		print('Senha: ',listeb[5])
+	    elif cal == 2 :
+	    		print('Cadastro N° 1')
+	    		print('Nome: ',listeb[0])
+	    		print('Numero: ',listeb[1])
+	    		print('Cpf: ',listeb[2])
+	    		print('Endereço: ',listeb[3])
+	    		print('Email: ',listeb[4])
+	    		print('Senha: ',listeb[5])
+	    		print('Cadastro N° 2')
+	    		print('Nome: ',listeb[6])
+	    		print('Numero',listeb[7])
+	    		print('Cpf',listeb[8])
+	    		print('Endereço',listeb[9])
+	    		print('Email: ',listeb[10])
+	    		print('Senha: ',listeb[11])
+	    elif cal == 3 :
+	    		print('Cadastro N° 1')
+	    		print('Nome: ',listeb[0])
+	    		print('Numero: ',listeb[1])
+	    		print('Cpf: ',listeb[2])
+	    		print('Endereço: ',listeb[3])
+	    		print('Email: ',listeb[4])
+	    		print('Senha: ',listeb[5])
+	    		print('Cadastro N° 2')
+	    		print('Nome: ',listeb[6])
+	    		print('Numero',listeb[7])
+	    		print('Cpf',listeb[8])
+	    		print('Endereço',listeb[9])
+	    		print('Email: ',listeb[10])
+	    		print('Senha: ',listeb[11])
+	    		print('Cadastro N° 3')
+	    		print('Nome: ',listeb[12])
+	    		print('Numero: ',listeb[13])
+	    		print('Cpf',listeb[14])
+	    		print('Endereço',listeb[15])
+	    		print('Email',listeb[16])
+	    		print('Senha',listeb[17])
+	    elif cal == 4 :
+	    	    print('Cadastro N° 1')
+	    	    print('Nome: ',listeb[0])
+	    	    print('Numero: ',listeb[1])
+	    	    print('Cpf: ',listeb[2])
+	    	    print('Endereço: ',listeb[3])
+	    	    print('Email: ',listeb[4])
+	    	    print('Senha: ',listeb[5])
+	    	    print('Cadastro N° 2')
+	    	    print('Nome: ',listeb[6])
+	    	    print('Numero',listeb[7])
+	    	    print('Cpf',listeb[8])
+	    	    print('Endereço',listeb[9])
+	    	    print('Email: ',listeb[10])
+	    	    print('Senha: ',listeb[11])
+	    	    print('Cadastro N° 3')
+	    	    print('Nome: ',listeb[12])
+	    	    print('Numero: ',listeb[13])
+	    	    print('Cpf',listeb[14])
+	    	    print('Endereço',listeb[15])
+	    	    print('Email',listeb[16])
+	    	    print('Senha',listeb[17])
+	    	    print('Cadastro N° 4')
+	    	    print('Nome: ',listeb[18])
+	    	    print('Numero: ',listeb[19])
+	    	    print('Cpf',listeb[20])
+	    	    print('Endereço',listeb[21])
+	    	    print('Email',listeb[22])
+	    	    print('Senha',listeb[23])
+	    elif cal == 5 :
+	    		print('Cadastro N° 1')
+	    		print('Nome: ',listeb[0])
+	    		print('Numero: ',listeb[1])
+	    		print('Cpf: ',listeb[2])
+	    		print('Endereço: ',listeb[3])
+	    		print('Email: ',listeb[4])
+	    		print('Senha: ',listeb[5])
+	    		print('Cadastro N° 2')
+	    		print('Nome: ',listeb[6])
+	    		print('Numero',listeb[7])
+	    		print('Cpf',listeb[8])
+	    		print('Endereço',listeb[9])
+	    		print('Email: ',listeb[10])
+	    		print('Senha: ',listeb[11])
+	    		print('Cadastro N° 3')
+	    		print('Nome: ',listeb[12])
+	    		print('Numero: ',listeb[13])
+	    		print('Cpf',listeb[14])
+	    		print('Endereço',listeb[15])
+	    		print('Email',listeb[16])
+	    		print('Senha',listeb[17])
+	    		print('Cadastro N° 4')
+	    		print('Nome: ',listeb[18])
+	    		print('Numero: ',listeb[19])
+	    		print('Cpf',listeb[20])
+	    		print('Endereço',listeb[21])
+	    		print('Email',listeb[22])
+	    		print('Senha',listeb[23])
+	    		print('Cadastro N° 5')
+	    		print('Nome: ',listeb[24])
+	    		print('Numero: ',listeb[25])
+	    		print('Cpf',listeb[26])
+	    		print('Endereço',listeb[27])
+	    		print('Email',listeb[28])
+	    		print('Senha',listeb[29])
+	    else :
+	    	print('Sistema ainda sem dados')
+	    if cal > 0 and cal < 6 :
+	        print('Qual cadastro você que Deletar: ')
+	        print('1-Cadastro 1')
+	        print('2-Cadastro 2')
+	        print('3-Cadastro 3')
+	        print('4-Cadastro 4')
+	        print('5-Cadastro 5')
+	        print('6-Todos')
+	        print('7- Nenhum')
+	    
+	        v = int(input('Digite sua opção: '))
+	    
+	        if v == 1 :
+	    	    del listeb[5]
+	    	    del listeb[4]
+	    	    del listeb[3]
+	    	    del listeb[2]
+	    	    del listeb[1]
+	    	    del listeb[0]
+	    	    
+	    	    if reg[0] > 0 :
+	    	        del reg[0]
+	    	        x=x-1
+	    	        print('Cadastro 1 deletado')
+	    	    
+	        elif v == 2 :
+	    	    del listeb[11]
+	    	    del listeb[10]
+	    	    del listeb[9]
+	    	    del listeb[8]
+	    	    del listeb[7]
+	    	    del listeb[6]
+	    	    
+	    	    if reg[0] > 0 :
+	    	        reg[0]=reg[0]-1
+	    	        x=x-1
+	    	        print('Cadastro 2 deletado')
+	    	        
+	        elif v ==3 :
+	    	    del listeb[17]
+	    	    del listeb[16]
+	    	    del listeb[15]
+	    	    del listeb[14]
+	    	    del listeb[13]
+	    	    del listeb[12]
+	    	    
+	    	    if reg[0] > 0 :
+	    	        reg[0]=reg[0]-1
+	    	        x=x-1
+	    	        print('Cadastro 3 deletado')
+	    	    
+	        elif v == 4 :
+	    	    del listeb[23] 
+	    	    del listeb[22]
+	    	    del listeb[21]
+	    	    del listeb[20]
+	    	    del listeb[19]
+	    	    del listeb[18]
+	    	    
+	    	    if reg[0] > 0 :
+	    	        reg[0]=reg[0]-1
+	    	        x=x-1
+	    	        print('Cadastro 4 deletado')
+	    	    
+	        elif v == 5 :
+	    	    del listeb[29]
+	    	    del listeb[28]
+	    	    del listeb[27]
+	    	    del listeb[26]
+	    	    del listeb[25]
+	    	    del listeb[24]
+	    	    
+	    	    if reg[0] > 0 :
+	    	        reg[0]=reg[0]-1
+	    	        x=x-1
+	    	        print('Cadastro 5 deletado')
+	    	    
+	        elif v == 6 :
+	            if cal == 1 :
+	    	        del listeb[5]
+	    	        del listeb[4]
+	    	        del listeb[3]
+	    	        del listeb[2]
+	    	        del listeb[1]
+	    	        del listeb[0]
+	    	        
+	    	        del reg[0]
+	    	        x=1
+	    	        print('Todos dados existentes deletados')
+	            elif cal == 2 :
+	    	        del listeb[11]
+	    	        del listeb[10]
+	    	        del listeb[9]
+	    	        del listeb[8]
+	    	        del listeb[7]
+	    	        del listeb[6]
+	    	        del listeb[5]
+	    	        del listeb[4]
+	    	        del listeb[3]
+	    	        del listeb[2]
+	    	        del listeb[1]
+	    	        del listeb[0]
+	    	        
+	    	        opa= len(reg)
+	    	        if opa == 1 :
+	    	            del reg[0]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	        else :
+	    	            del reg[0:1]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	                
+	            elif cal == 3 :
+	    	        del listeb[17]
+	    	        del listeb[16]
+	    	        del listeb[15]
+	    	        del listeb[14]
+	    	        del listeb[13]
+	    	        del listeb[12]
+	    	        del listeb[11]
+	    	        del listeb[10]
+	    	        del listeb[9]
+	    	        del listeb[8]
+	    	        del listeb[7]
+	    	        del listeb[6]
+	    	        del listeb[5]
+	    	        del listeb[4]
+	    	        del listeb[3]
+	    	        del listeb[2]
+	    	        del listeb[1]
+	    	        del listeb[0]
+	    	        
+	    	        opa= len(reg)
+	    	        if opa == 1 :
+	    	            del reg[0]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	        elif opa == 2 :
+	    	            del reg[0:1]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	        else :
+	    	            del reg[0:1:2]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	            
+	            elif cal == 4 :
+	    	        del listeb[23] 
+	    	        del listeb[22]
+	    	        del listeb[21]
+	    	        del listeb[20]
+	    	        del listeb[19]
+	    	        del listeb[18]
+	    	        del listeb[17]
+	    	        del listeb[16]
+	    	        del listeb[15]
+	    	        del listeb[14]
+	    	        del listeb[13]
+	    	        del listeb[12]
+	    	        del listeb[11]
+	    	        del listeb[10]
+	    	        del listeb[9]
+	    	        del listeb[8]
+	    	        del listeb[7]
+	    	        del listeb[6]
+	    	        del listeb[5]
+	    	        del listeb[4]
+	    	        del listeb[3]
+	    	        del listeb[2]
+	    	        del listeb[1]
+	    	        del listeb[0]
+	    	        
+	    	        opa= len(reg)
+	    	        if opa == 1 :
+	    	            del reg[0]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	        elif opa == 2 :
+	    	            del reg[0:1]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	        elif opa == 3 :
+	    	            del reg[0:1:2]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	        else :
+	    	            del reg[0:1]
+	    	            del reg[2:3]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	          
+	            elif cal == 5 :
+	                del listeb[29]
+	                del listeb[28]
+	                del listeb[27]
+	                del listeb[26]
+	                del listeb[25]
+	                del listeb[24]
+	                del listeb[23] 
+	                del listeb[22]
+	                del listeb[21]
+	                del listeb[20]
+	                del listeb[19]
+	                del listeb[18]
+	                del listeb[17]
+	                del listeb[16]
+	                del listeb[15]
+	                del listeb[14]
+	                del listeb[13]
+	                del listeb[12]
+	                del listeb[11]
+	                del listeb[10]
+	                del listeb[9]
+	                del listeb[8]
+	                del listeb[7]
+	                del listeb[6]
+	                del listeb[5]
+	                del listeb[4]
+	                del listeb[3]
+	                del listeb[2]
+	                del listeb[1]
+	                del listeb[0]
+	                
+	                opa= len(reg)
+	                if opa == 1 :
+	                    del reg[0]
+	                    x=1
+	                    print('Todos dados existentes deletados')
+	                elif opa == 2 :
+	                    del reg[0:1]
+	                    x=1
+	                    print('Todos dados existentes deletados')
+	                elif opa == 3 :
+	                    del reg[0:1:2]
+	                    x=1
+	                    print('Todos dados existentes deletados')
+	                elif opa == 4 :
+	                    del reg[0:1]
+	                    del reg[2:3]
+	                    x=1
+	                    print('Todos dados existentes deletados')
+	                else :
+	    	            del reg[0:1]
+	    	            del reg[2:3:4]
+	    	            x=1
+	    	            print('Todos dados existentes deletados')
+	    	            
+	        elif v == 7 :
+	            print(' ')
+	        else :
+	            print('')
+	    else:
+	        print(' ')
+        
+	elif l == 4 :
+	    cal = sum(reg)
+	    if cal ==1 :
+	        print('Nome: ',listeb[0])
+	        print('Numero: ',listeb[1])
+	        print('Cpf: ',listeb[2])
+	        print('Endereço: ',listeb[3])
+	        print('Email: ',listeb[4])
+	        print('Senha: ',listeb[5])
+	    elif cal == 2 :
+	    	print('Cadastro N° 1')
+	    	print('Nome: ',listeb[0])
+	    	print('Numero: ',listeb[1])
+	    	print('Cpf: ',listeb[2])
+	    	print('Endereço: ',listeb[3])
+	    	print('Email: ',listeb[4])
+	    	print('Senha: ',listeb[5])
+	    	print('Cadastro N° 2')
+	    	print('Nome: ',listeb[6])
+	    	print('Numero',listeb[7])
+	    	print('Cpf',listeb[8])
+	    	print('Endereço',listeb[9])
+	    	print('Email: ',listeb[10])
+	    	print('Senha: ',listeb[11])
+	    elif cal == 3 :
+	    	print('Cadastro N° 1')
+	    	print('Nome: ',listeb[0])
+	    	print('Numero: ',listeb[1])
+	    	print('Cpf: ',listeb[2])
+	    	print('Endereço: ',listeb[3])
+	    	print('Email: ',listeb[4])
+	    	print('Senha: ',listeb[5])
+	    	print('Cadastro N° 2')
+	    	print('Nome: ',listeb[6])
+	    	print('Numero',listeb[7])
+	    	print('Cpf',listeb[8])
+	    	print('Endereço',listeb[9])
+	    	print('Email: ',listeb[10])
+	    	print('Senha: ',listeb[11])
+	    	print('Cadastro N° 3')
+	    	print('Nome: ',listeb[12])
+	    	print('Numero: ',listeb[13])
+	    	print('Cpf',listeb[14])
+	    	print('Endereço',listeb[15])
+	    	print('Email',listeb[16])
+	    	print('Senha',listeb[17])
+	    elif cal == 4 :
+	    	print('Cadastro N° 1')
+	    	print('Nome: ',listeb[0])
+	    	print('Numero: ',listeb[1])
+	    	print('Cpf: ',listeb[2])
+	    	print('Endereço: ',listeb[3])
+	    	print('Email: ',listeb[4])
+	    	print('Senha: ',listeb[5])
+	    	print('Cadastro N° 2')
+	    	print('Nome: ',listeb[6])
+	    	print('Numero',listeb[7])
+	    	print('Cpf',listeb[8])
+	    	print('Endereço',listeb[9])
+	    	print('Email: ',listeb[10])
+	    	print('Senha: ',listeb[11])
+	    	print('Cadastro N° 3')
+	    	print('Nome: ',listeb[12])
+	    	print('Numero: ',listeb[13])
+	    	print('Cpf',listeb[14])
+	    	print('Endereço',listeb[15])
+	    	print('Email',listeb[16])
+	    	print('Senha',listeb[17])
+	    	print('Cadastro N° 4')
+	    	print('Nome: ',listeb[18])
+	    	print('Numero: ',listeb[19])
+	    	print('Cpf',listeb[20])
+	    	print('Endereço',listeb[21])
+	    	print('Email',listeb[22])
+	    	print('Senha',listeb[23])
+	    elif cal == 5 :
+	    	print('Cadastro N° 1')
+	    	print('Nome: ',listeb[0])
+	    	print('Numero: ',listeb[1])
+	    	print('Cpf: ',listeb[2])
+	    	print('Endereço: ',listeb[3])
+	    	print('Email: ',listeb[4])
+	    	print('Senha: ',listeb[5])
+	    	print('Cadastro N° 2')
+	    	print('Nome: ',listeb[6])
+	    	print('Numero',listeb[7])
+	    	print('Cpf',listeb[8])
+	    	print('Endereço',listeb[9])
+	    	print('Email: ',listeb[10])
+	    	print('Senha: ',listeb[11])
+	    	print('Cadastro N° 3')
+	    	print('Nome: ',listeb[12])
+	    	print('Numero: ',listeb[13])
+	    	print('Cpf',listeb[14])
+	    	print('Endereço',listeb[15])
+	    	print('Email',listeb[16])
+	    	print('Senha',listeb[17])
+	    	print('Cadastro N° 4')
+	    	print('Nome: ',listeb[18])
+	    	print('Numero: ',listeb[19])
+	    	print('Cpf',listeb[20])
+	    	print('Endereço',listeb[21])
+	    	print('Email',listeb[22])
+	    	print('Senha',listeb[23])
+	    	print('Cadastro N° 5')
+	    	print('Nome: ',listeb[24])
+	    	print('Numero: ',listeb[25])
+	    	print('Cpf',listeb[26])
+	    	print('Endereço',listeb[27])
+	    	print('Email',listeb[28])
+	    	print('Senha',listeb[29])
+	    else :
+	        print('Sistema ainda sem dados')
+	    if cal < 6 and cal > 0 :
+	        print('Qual cadastro você que atualizar: ')
+	        print('1-Cadastro 1')
+	        print('2-Cadastro 2')
+	        print('3-Cadastro 3')
+	        print('4-Cadastro 4')
+	        print('5-Cadastro 5')
+		
+	        g = int(input('Digite sua opção: '))
+		
+	        if g == 1 :
+		   	    listeb[0]  =(input('Digite seu nome: '))
+		   	    listeb[1] = (input('Digite seu numero: '))
+		   	    listeb[2] = (input('Digite seu Cpf: '))
+		   	    listeb[3] = (input('Digite seu endeço: '))
+		   	    listeb[4] = (input('Digite seu E-mail'))
+		   	    listeb[5] = ('Digite sua Senha: ')
+	        elif g == 2 :
+		   	    listeb[6]  =(input('Digite seu nome: '))
+		   	    listeb[7] = (input('Digite seu numero: '))
+		   	    listeb[8] = (input('Digite seu Cpf: '))
+		   	    listeb[9] = (input('Digite seu endeço: '))
+		   	    listeb[10] = (input('Digite seu E-mail'))
+		   	    listeb[11] = ('Digite sua Senha: ')	
+	        elif g == 3 :
+		   	    listeb[12]  =(input('Digite seu nome: '))
+		   	    listeb[13] = (input('Digite seu numero: '))
+		   	    listeb[14] = (input('Digite seu Cpf: '))
+		   	    listeb[15] = (input('Digite seu endeço: '))
+		   	    listeb[16] = (input('Digite seu E-mail'))
+		   	    listeb[17] = ('Digite sua Senha: ')
+	        elif g == 4 :
+		   	    listeb[18]  =(input('Digite seu nome: '))
+		   	    listeb[19] = (input('Digite seu numero: '))
+		   	    listeb[20] = (input('Digite seu Cpf: '))
+		   	    listeb[21] = (input('Digite seu endeço: '))
+		   	    listeb[22] = (input('Digite seu E-mail'))
+		   	    listeb[23] = ('Digite sua Senha: ')
+	        elif g == 5 :
+		   	    listeb[24]  =(input('Digite seu nome: '))
+		   	    listeb[25] = (input('Digite seu numero: '))
+		   	    listeb[26] = (input('Digite seu Cpf: '))
+		   	    listeb[27] = (input('Digite seu endeço: '))
+		   	    listeb[28] = (input('Digite seu E-mail'))
+		   	    listeb[29] = ('Digite sua Senha: ')
+	        else :
+		   	    print('Opção inválida')
+	    else :
+		    print(' ')
+	elif l==5:
+			print("\nDeseja sair? ")
+			print("1- Sim")
+			print("2- Não")
+			
+			z= int(input("Digite sua opção: "))
+			
+			if z==1:
+				print("\nVocê saiu do sistema. ")
+				i=5
+			if z>5:
+				print('MENU DE CADASTRO: ')
+	else :
+	    print('Opção inválida')
